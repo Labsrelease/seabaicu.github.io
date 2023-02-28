@@ -269,7 +269,7 @@
         }
 
         .sub-containier {
-            width: 100%;
+       
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -280,16 +280,24 @@
 </head>
 <body>
 
-    
 
 
 
-       
+    <div class="header">
+        <h1 class="title">Food Sea</h1>
+
+    </div>
+
+    <div class="sub-containier">
+
+        <h2 class="subtitle">Cardápio</h2>
+    </div>
 
 
-        <div class="container"></div>
-  
-  
+
+    <div class="container"></div>
+
+
     <div class="checkout" style="display: none">
         <h2>Checkout</h2>
         <table>
@@ -464,16 +472,16 @@
             produtos.forEach((produto, index) => {
                 const card = `
 
-                    <div class="card" data-index="${index}">
-                        <img src="${produto.imagem}">
-                        <h2>${produto.nome}</h2>
-                        <p>${produto.descricao}</p>
-                        <p>R$ ${produto.preco.toFixed(2)}</p>
-                         <button class="btn adicionar">Adicionar ao carrinho</button>
-                    </div>
+                        <div class="card" data-index="${index}">
+                            <img src="${produto.imagem}">
+                            <h2>${produto.nome}</h2>
+                            <p>${produto.descricao}</p>
+                            <p>R$ ${produto.preco.toFixed(2)}</p>
+                             <button class="btn adicionar">Adicionar ao carrinho</button>
+                        </div>
 
 
-            `;
+                `;
                 container.append(card);
             });
 
@@ -499,14 +507,14 @@
 
                 const tbody = $('.checkout table tbody');
                 const linha = `
-                            <tr data-produto="${produto.nome}">
-                                <td>${produto.nome}</td>
-                                <td><input type="number" min="1" value="${item.quantidade}" class="quantidade"></td>
-                                <td>R$ ${produto.preco.toFixed(2)}</td>
-                                <td class="subtotal">R$ ${produto.preco.toFixed(2)}</td>
-                                <td><button class="btn remover">Remover</button></td>
-                            </tr>
-                        `;
+                                <tr data-produto="${produto.nome}">
+                                    <td>${produto.nome}</td>
+                                    <td><input type="number" min="1" value="${item.quantidade}" class="quantidade"></td>
+                                    <td>R$ ${produto.preco.toFixed(2)}</td>
+                                    <td class="subtotal">R$ ${produto.preco.toFixed(2)}</td>
+                                    <td><button class="btn remover">Remover</button></td>
+                                </tr>
+                            `;
                 tbody.append(linha);
 
                 //atualiza o valor total da compra
@@ -669,30 +677,30 @@
             // Crie os elementos HTML para cada pergunta do formulário
 
             popup.innerHTML = `
-      <div class="popup-content">
-        <h2>Food Sea</h2>
+          <div class="popup-content">
+            <h2>Food Sea</h2>
 
-        <div class="input-with-image">
-          <img src="https://icons8.com.br/icon/98957/usu%C3%A1rio">
-          <input type="text" placeholder="Nome..." id="nome">
-        </div>
-        <div class="input-with-image">
-          <img src="https://icons8.com.br/icon/98957/usu%C3%A1rio">
-          <input type="text" placeholder="Endereço..." id="endereco">
-        </div>
+            <div class="input-with-image">
+              <img src="https://icons8.com.br/icon/98957/usu%C3%A1rio">
+              <input type="text" placeholder="Nome..." id="nome">
+            </div>
+            <div class="input-with-image">
+              <img src="https://icons8.com.br/icon/98957/usu%C3%A1rio">
+              <input type="text" placeholder="Endereço..." id="endereco">
+            </div>
 
-        <div class="checkbox">
-          <input type="checkbox" id="checkbox">
-          <label for="checkbox">Precisa de troco?</label>
-        </div>
+            <div class="checkbox">
+              <input type="checkbox" id="checkbox">
+              <label for="checkbox">Precisa de troco?</label>
+            </div>
 
-        <div class="input-with-image">
-          <img src="https://icons8.com.br/icon/98957/usu%C3%A1rio">
-          <input type="text" placeholder="Qual o valor?..." id="valor">
-        </div>
+            <div class="input-with-image">
+              <img src="https://icons8.com.br/icon/98957/usu%C3%A1rio">
+              <input type="text" placeholder="Qual o valor?..." id="valor">
+            </div>
 
-        <button class="salvar">Salvar</button>
-      </div>
+            <button class="salvar">Salvar</button>
+          </div>
 `;
 
             const nomeInput = document.getElementById('nome');
